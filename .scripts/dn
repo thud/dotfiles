@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+	echo "no name supplied"
+	exit
+else
+	echo "creating project => $1"
+	dotnet new sln -o $1 && \
+	cd $1 && \
+	dotnet new classlib -o $1.Lib && \
+	dotnet new console -o $1.App && \
+	dotnet new mstest -o $1.Tests && \
+	dotnet sln add $1.Lib $1.App $1.Tests && \
+	cd $1.Tests && \
+	dotnet add reference ../$1.Lib && \
+	cd ../$1.App && \
+	dotnet add reference ../$1.Lib
+fi
