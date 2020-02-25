@@ -116,12 +116,14 @@ export VISUAL=vim
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-#
+
+export WALLPAPERS="/usr/share/wallpapers"
+
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias i3c="vim ~/.config/i3/config"
-alias rwal="wal -i \"/opt/Pictures\""
+alias rwal="wal -i \"$WALLPAPERS\""
 alias pastel="wal -i \"/opt/Pictures/wallpaper7.jpg\""
 alias ls="exa"
 alias l="exa -lah"

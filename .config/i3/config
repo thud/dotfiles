@@ -17,7 +17,7 @@ gaps outer 15
 
 # set wallpaper - jp
 #exec --no-startup-id sh ~/.fehbg
-exec --no-startup-id wal -i "/opt/Pictures"
+exec --no-startup-id wal -i "$WALLPAPERS"
 
 # set picom transaparency - jp
 exec --no-startup-id picom --config ~/.picom.conf
