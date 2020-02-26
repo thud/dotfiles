@@ -31,8 +31,8 @@ bindsym mod1+F6 exec --no-startup-id xbacklight -ctrl chromeos::kbd_backlight -d
 bindsym mod1+F7 exec --no-startup-id xbacklight -ctrl chromeos::kbd_backlight -inc 10
 
 
-bindsym mod1+numbersign exec --no-startup-id google-chrome-stable --new-window
-bindsym mod1+o exec --no-startup-id google-chrome-stable --new-window --app=https://www.overleaf.com/project/5d94f933b094f10001e703ff
+bindsym mod1+numbersign exec --no-startup-id google-chrome-unstable --new-window
+bindsym mod1+o exec --no-startup-id google-chrome-unstable --new-window --app=https://www.overleaf.com/project/5d94f933b094f10001e703ff
 
 bindsym mod1+Shift+s   layout splitv;\
                        move left;\
