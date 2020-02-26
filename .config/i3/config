@@ -22,7 +22,7 @@ exec --no-startup-id wal -i "$WALLPAPERS"
 # set picom transaparency - jp
 exec --no-startup-id picom --config ~/.picom.conf
 
-bindsym mod4+l exec kill -9 -1
+bindsym mod4+l exec --no-startup-id dm-tool lock
 
 # set brightness keybindings etc.
 bindsym F6 exec --no-startup-id xbacklight -dec 10
