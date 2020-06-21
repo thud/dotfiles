@@ -100,8 +100,8 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -122,16 +122,22 @@ export VISUAL=vim
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vimrc="nvim ~/.config/nvim/init.vim"
-alias i3c="vim ~/.config/i3/config"
+alias i3c="nvim ~/.config/i3/config"
 alias rwal="wal -i \"$WALLPAPERS\""
 alias pastel="wal -i \"$WALLPAPERS/wallpaper7.jpg\""
 alias ls="exa"
 alias l="exa -lah"
 alias r="ranger"
+alias ka="killall"
 
 alias sps="cd ~/CODE/sps"
 alias vim="nvim"
-alias chrome="google-chrome-stable"
+alias chrome="google-chrome-unstable"
+alias manim="sudo INPUT_PATH=/home/jp/CODE/manim/ecc/ \
+	OUTPUT_PATH=/home/jp/CODE/manim/ecc/ \
+	docker-compose run manim"
+
+alias tsm="transmission-remote"
 
 # Dotfiles git bare repo
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
@@ -141,12 +147,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/CODE/dotnet
+export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/usr/lib/dart/bin
+export PATH=$PATH:~/.config/nvim/plugged/vim-live-latex-preview/bin
 
 export PATH=$PATH:~/.scripts
+
 
 #export PATH="/home/jp/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
