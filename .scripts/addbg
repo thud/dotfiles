@@ -1,0 +1,26 @@
+#!/bin/sh
+
+for IN
+do
+	FILE=$(basename $IN);
+	FULLPATH=$IN;
+	WALLPAPERS=/home/jp/.config/wallpapers;
+
+	echo "";
+	echo "attempting to add $FILE to wallpapers.";
+
+	if [ -s $FULLPATH ]
+	then
+		echo "found $FILE";
+
+		if [ -s $WALLPAPERS/$FILE ]
+		then
+			echo "wallpaper already added!";
+		else
+			cp $FULLPATH $WALLPAPERS &&
+				echo "  => added $WALLPAPERS/$FILE ";
+		fi
+	else
+		echo "file doesn't exist";
+	fi
+done

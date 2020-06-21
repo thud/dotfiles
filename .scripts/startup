@@ -1,0 +1,12 @@
+#!/bin/sh
+
+xrandr -r 144;
+echo "changed refresh rate to 144hz...";
+xset r rate 350 50
+echo "set key rehit speed..."
+picom -b --config ~/.picom.conf;
+echo "started picom...";
+setbg;
+echo "set wallpaper...";
+xinput --set-prop 9 "Coordinate Transformation Matrix" 0.35 0 0 0 0.35 0 0 0 1;
+echo "set mouse-sensitivity...";

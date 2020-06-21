@@ -1,0 +1,19 @@
+#/bin/sh
+
+if [ ! "$1" ];
+then
+	echo "Missing argument [contest name] (eg. 650d2)";
+	exit;
+fi
+
+(ls template.cpp >> /dev/null 2>&1 &&
+	mkdir -p "$1" &&
+	cd "$1" &&
+	cp -n ../template.cpp a.cpp &&
+	cp -n ../template.cpp b.cpp &&
+	cp -n ../template.cpp c.cpp &&
+	cp -n ../template.cpp d.cpp &&
+	cp -n ../template.cpp e.cpp &&
+	cp -n ../template.cpp f.cpp &&
+	echo "generated code successfully"; ) ||
+	echo "FAILED"

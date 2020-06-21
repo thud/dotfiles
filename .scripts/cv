@@ -1,0 +1,5 @@
+#!/bin/sh
+
+g++ -std=c++17 -O2 -Wall $1.cpp -o $1 &&
+	echo -e "built successfully...\n" &&
+	./$1
