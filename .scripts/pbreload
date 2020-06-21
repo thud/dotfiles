@@ -1,4 +1,0 @@
-#!/bin/sh
-
-kill $(pgrep polybar)
-polybar $1
