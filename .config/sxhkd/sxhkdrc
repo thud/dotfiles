@@ -24,3 +24,12 @@ alt + F6
 
 alt + F7
 	xbacklight -ctrl chromeos::kbd_backlight +10
+
+F8
+	amixer sset Master mute > /dev/null 2>&1
+
+F9
+	amixer sset Master 10%- > /dev/null 2>&1
+
+F10
+	amixer sset Master 10%+ unmute > /dev/null 2>&1
