@@ -119,6 +119,10 @@ export VISUAL=nvim
 # For a full list of active aliases, run `alias`.
 #
 
+
+
+
+
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vimrc="nvim ~/.config/nvim/init.vim"
@@ -141,6 +145,13 @@ alias tsm="transmission-remote"
 
 # Dotfiles git bare repo
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+
+# DEVOURING
+
+alias mpv='devour mpv'
+alias sxiv='devour sxiv'
+alias zathura='devour zathura'
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
