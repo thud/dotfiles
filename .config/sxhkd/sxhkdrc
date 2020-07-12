@@ -9,3 +9,15 @@ alt + shift + q
 
 alt + p
 	dmenu_run
+
+F6
+	xbacklight -ctrl intel_backlight -10
+
+F7
+	xbacklight -ctrl intel_backlight +10
+
+alt + F6
+	xbacklight -ctrl chromeos::kbd_backlight -10
+
+alt + F7
+	xbacklight -ctrl chromeos::kbd_backlight +10
