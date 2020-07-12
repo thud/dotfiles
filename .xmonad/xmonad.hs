@@ -1,21 +1,21 @@
 import XMonad.Layout.Spacing
 import XMonad.Util.Run
+import XMonad.Layout.NoBorders
+import XMonad.Hooks.EwmhDesktops
 import XMonad
 
 myLayout = tiled ||| Mirror tiled ||| Full
   where
-    tiled = smartSpacingWithEdge 15 $ Tall nmaster delta ratio
+    tiled = smartBorders . smartSpacingWithEdge 15 $ Tall nmaster delta ratio
     nmaster = 1
     ratio = 1/2
     delta = 3/100
-
---myLayout = gaps [(U,18), (R,23)] $ Tall 1 (3/100) (1/2) ||| Full
 
 main = do
     xmproc <- spawnPipe "xmobar"
     spawn "startup"
     spawn "sxhkd"
-    xmonad $ defaultConfig {
+    xmonad $ ewmh defaultConfig {
         terminal = "alacritty",
         layoutHook = myLayout
     }
