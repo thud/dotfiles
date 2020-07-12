@@ -4,6 +4,9 @@ alt + shift + Return
 alt + a
 	brave
 
+alt + shift + a
+	brave --incognito
+
 alt + shift + q
 	killall dwm xmonad
 
