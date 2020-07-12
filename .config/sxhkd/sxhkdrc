@@ -2,7 +2,7 @@ alt + shift + Return
 	alacritty
 
 alt + a
-	google-chrome-unstable
+	brave
 
 alt + shift + q
 	killall dwm xmonad
