@@ -14,14 +14,18 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
+Plug 'evanleck/vim-svelte'
+Plug 'thud/vim-and-cp'
 
 Plug 'junegunn/fzf'
 Plug 'preservim/nerdtree'
 
 call plug#end()
 
+let mapleader=" "
 set mouse+=a
 set hidden
+set splitbelow
 
 set number relativenumber
 set ts=4 sw=4
@@ -64,3 +68,5 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_general_viewer = 'zathura'
 
 au BufReadPost xmobarrc set ft=haskell
+
+tnoremap <Esc> <C-\><C-n>
