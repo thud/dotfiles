@@ -2,6 +2,6 @@
 
 file_name=$(echo $1 | sed 's/\.cpp//g')
 
-g++ -std=c++17 -Wall $file_name.cpp -o $file_name -fsanitize=address -fsanitize=undefined &&
+g++ -std=c++17 -Wall $file_name.cpp -o $file_name -D jp_local -fsanitize=address -fsanitize=undefined &&
 	echo -e "built successfully...\n" &&
 	./$file_name
