@@ -6,3 +6,5 @@ picom -b --config ~/.picom.conf;
 echo "started picom...";
 setbg;
 echo "set wallpaper...";
+xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1;
+echo "enabled touchpad tapping...";
