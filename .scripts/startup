@@ -1,5 +1,7 @@
 #!/bin/sh
 
+xrandr --fbmm 277x156
+echo "set screen size"
 xset r rate 350 50
 echo "set key rehit speed..."
 picom -b --config ~/.picom.conf;
