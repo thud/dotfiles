@@ -1,0 +1,41 @@
+#!/bin/sh
+
+get_date_status() {
+	echo " $(date +"%a %e/%m/%g  %T")"
+}
+
+get_ram_status() {
+	free -m | grep '^Mem' | awk '{print " " $3"MB"}'
+}
+
+get_cpu_status() {
+	top -n 1 -b | awk '/^%Cpu/{print " " $2 "%"}'
+}
+
+get_nvpn_status() {
+	(nordvpn status | grep "Connected" > /dev/null 2>&1) &&
+		echo "   ";
+}
+
+date_status="$(get_date_status)"
+ram_status="$(get_ram_status)"
+cpu_status="$(get_cpu_status)"
+vpn_status="$(get_nvpn_status)"
+
+((_bar_secs=-1));
+while true; do
+	((_bar_secs=(_bar_secs+1)%5));
+
+	date_status="$(get_date_status)"
+	ram_status="$(get_ram_status)"
+	cpu_status="$(get_cpu_status)"
+
+	if (( _bar_secs == 0 )); then
+		vpn_status="$(get_nvpn_status)" # slower command run less often
+	fi
+
+	name="$vpn_status   $cpu_status   $ram_status   $date_status"
+
+	xsetroot -name "$name";
+	sleep 1;
+done
