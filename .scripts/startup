@@ -2,11 +2,13 @@
 
 xrandr --fbmm 277x156
 echo "set screen size"
-xset r rate 350 50
-echo "set key rehit speed..."
+xset r rate 350 50;
+echo "set key rehit speed...";
 picom -b --config ~/.picom.conf;
 echo "started picom...";
 setbg;
 echo "set wallpaper...";
 xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1;
 echo "enabled touchpad tapping...";
+bar;
+echo "started status bar...";
