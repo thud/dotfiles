@@ -146,13 +146,6 @@ alias tsm="transmission-remote"
 # Dotfiles git bare repo
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
-# DEVOURING
-
-alias mpv='devour mpv'
-alias sxiv='devour sxiv'
-alias zathura='devour zathura'
-
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
