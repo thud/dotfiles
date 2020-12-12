@@ -12,6 +12,14 @@ get_cpu_status() {
 	top -n 1 -b | awk '/^%Cpu/{print " " $2 "%"}'
 }
 
+get_battery_status() {
+	(cat /sys/class/power_supply/BAT0/status | grep "Charging" > /dev/null 2>&1) &&
+		echo -n " " ||
+		echo -n " ";
+	cat /sys/class/power_supply/BAT0/capacity | tr -d '\n'
+	echo "%"
+}
+
 get_nvpn_status() {
 	(nordvpn status | grep "Connected" > /dev/null 2>&1) &&
 		echo "   ";
@@ -20,6 +28,7 @@ get_nvpn_status() {
 date_status="$(get_date_status)"
 ram_status="$(get_ram_status)"
 cpu_status="$(get_cpu_status)"
+battery_status="$(get_battery_status)"
 vpn_status="$(get_nvpn_status)"
 
 ((_bar_secs=-1));
@@ -29,12 +38,13 @@ while true; do
 	date_status="$(get_date_status)"
 	ram_status="$(get_ram_status)"
 	cpu_status="$(get_cpu_status)"
+	battery_status="$(get_battery_status)"
 
 	if (( _bar_secs == 0 )); then
 		vpn_status="$(get_nvpn_status)" # slower command run less often
 	fi
 
-	name="$vpn_status   $cpu_status   $ram_status   $date_status"
+	name="$vpn_status   $battery_status   $cpu_status   $ram_status   $date_status"
 
 	xsetroot -name "$name";
 	sleep 1;
