@@ -16,6 +16,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
 Plug 'evanleck/vim-svelte'
 Plug 'thud/vim-and-cp'
+Plug 'dag/vim-fish'
 
 Plug 'junegunn/fzf'
 Plug 'preservim/nerdtree'
