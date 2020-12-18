@@ -1,7 +1,7 @@
 #!/bin/sh
 
-CHOSEN=$(ls "/home/jp/.config/wallpapers" | shuf | sed -n 1p)
+CHOSEN=$(ls "$XDG_CONFIG_HOME/wallpapers" | shuf | sed -n 1p)
 
-cp /home/jp/.config/wallpapers/$CHOSEN /home/jp/.config/wall
+cp $XDG_CONFIG_HOME/wallpapers/$CHOSEN $XDG_CONFIG_HOME/wall
 
-xwallpaper --zoom "/home/jp/.config/wall"
+xwallpaper --zoom "$XDG_CONFIG_HOME/wall"

@@ -1,4 +1,4 @@
-set -x XDG_CONFIG_HOME "/home/jp/.config"
+set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x LANG en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
