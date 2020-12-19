@@ -14,6 +14,7 @@ abbr -a fishrc 'nvim ~/.config/fish/config.fish'
 abbr -a vimrc 'nvim ~/.config/nvim/init.vim'
 
 set -x PATH $PATH ~/.local/bin
+set -x PATH $PATH ~/.cargo/bin
 set -x PATH $PATH ~/.scripts
 
 function fish_greeting
