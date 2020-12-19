@@ -1,14 +1,4 @@
-URxvt.scrollBar: False
-URxvt.scrollBar_right: False
-
-URxvt*font: xft:Source Code Pro for Powerline:size=13, xft:Font Awesome 5 Free
-URxvt.saveLines: 20000
-URxvt.letterSpace: +1
-
-URxvt.perl-ext-common: default,resize-font
-
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+Xft.dpi: 96
 
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)
