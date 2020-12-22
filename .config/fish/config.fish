@@ -40,18 +40,10 @@ function fish_prompt
 	set_color normal
 end
 
-function fish_vi_cursor --on-variable fish_bind_mode
-    switch $fish_bind_mode
-        case insert
-            printf '\e]50;CursorShape=1\x7'
-        case default
-            printf '\e]50;CursorShape=0\x7'
-        case "*"
-            printf '\e]50;CursorShape=0\x7'
-    end
-end
-
 fish_vi_key_bindings
+set -g fish_cursor_insert line
+set -g fish_cursor_replace_one underscore
+set -g fish_cursor_visual block
 
 # Nord theme
 set -U fish_color_normal normal
