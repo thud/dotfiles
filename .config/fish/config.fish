@@ -1,4 +1,4 @@
-set -x XDG_CONFIG_HOME "/home/jp/.config"
+set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x LANG en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
@@ -14,6 +14,7 @@ abbr -a fishrc 'nvim ~/.config/fish/config.fish'
 abbr -a vimrc 'nvim ~/.config/nvim/init.vim'
 
 set -x PATH $PATH ~/.local/bin
+set -x PATH $PATH ~/.cargo/bin
 set -x PATH $PATH ~/.scripts
 
 function fish_greeting
@@ -39,18 +40,10 @@ function fish_prompt
 	set_color normal
 end
 
-function fish_vi_cursor --on-variable fish_bind_mode
-    switch $fish_bind_mode
-        case insert
-            printf '\e]50;CursorShape=1\x7'
-        case default
-            printf '\e]50;CursorShape=0\x7'
-        case "*"
-            printf '\e]50;CursorShape=0\x7'
-    end
-end
-
 fish_vi_key_bindings
+set -g fish_cursor_insert line
+set -g fish_cursor_replace_one underscore
+set -g fish_cursor_visual block
 
 # Nord theme
 set -U fish_color_normal normal

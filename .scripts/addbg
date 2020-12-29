@@ -4,7 +4,7 @@ for IN
 do
 	FILE=$(basename $IN);
 	FULLPATH=$IN;
-	WALLPAPERS=/home/jp/.config/wallpapers;
+	WALLPAPERS=$XDG_CONFIG_HOME/wallpapers;
 
 	echo "";
 	echo "attempting to add $FILE to wallpapers.";
