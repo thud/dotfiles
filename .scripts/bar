@@ -1,7 +1,7 @@
 #!/bin/sh
 
 get_date_status() {
-	echo " $(date +"%a %e/%m/%g  %T")"
+	echo " $(date +"%a %e/%m/%y  %T")"
 }
 
 get_ram_status() {
@@ -40,9 +40,9 @@ while true; do
 	cpu_status="$(get_cpu_status)"
 	battery_status="$(get_battery_status)"
 
-	if (( _bar_secs == 0 )); then
-		vpn_status="$(get_nvpn_status)" # slower command run less often
-	fi
+	#if (( _bar_secs == 0 )); then
+		#vpn_status="$(get_nvpn_status)" # slower command run less often
+	#fi
 
 	name="$vpn_status   $battery_status   $cpu_status   $ram_status   $date_status"
 

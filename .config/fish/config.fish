@@ -1,24 +1,16 @@
-set -x XDG_CONFIG_HOME "$HOME/.config"
-set -x LANG en_US.UTF-8
-set -x EDITOR nvim
-set -x VISUAL nvim
-
-
 alias ls 'exa'
 alias l 'exa -lah'
 alias vim 'nvim'
 alias ka 'killall'
 alias tsm 'transmission-remote'
 alias dotfiles '/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-abbr -a fishrc 'nvim ~/.config/fish/config.fish'
-abbr -a vimrc 'nvim ~/.config/nvim/init.vim'
+abbr -a -g fishrc 'nvim $XDG_CONFIG_HOME/fish/config.fish'
+abbr -a -g vimrc 'nvim $XDG_CONFIG_HOME/nvim/init.vim'
+abbr -a -g bashrc 'nvim $HOME/.bashrc'
 
-set -x PATH $PATH ~/.local/bin
-set -x PATH $PATH ~/.cargo/bin
-set -x PATH $PATH ~/.scripts
+abbr -a -g upd 'sudo emerge --ask --update --deep --changed-use @world'
 
-function fish_greeting
-end
+set fish_greeting
 
 function fish_prompt
 	set_color -o magenta
@@ -40,34 +32,33 @@ function fish_prompt
 	set_color normal
 end
 
-fish_vi_key_bindings
 set -g fish_cursor_insert line
 set -g fish_cursor_replace_one underscore
 set -g fish_cursor_visual block
 
-# Nord theme
-set -U fish_color_normal normal
-set -U fish_color_command 81a1c1
-set -U fish_color_quote a3be8c
-set -U fish_color_redirection b48ead
-set -U fish_color_end 88c0d0
-set -U fish_color_error ebcb8b
-set -U fish_color_param eceff4
-set -U fish_color_comment 434c5e
-set -U fish_color_match --background=brblue
-set -U fish_color_selection white --bold --background=brblack
-set -U fish_color_search_match bryellow --background=brblack
-set -U fish_color_history_current --bold
-set -U fish_color_operator 00a6b2
-set -U fish_color_escape 00a6b2
-set -U fish_color_cwd green
-set -U fish_color_cwd_root red
-set -U fish_color_valid_path --underline
-set -U fish_color_autosuggestion 4c566a
-set -U fish_color_user brgreen
-set -U fish_color_host normal
-set -U fish_color_cancel -r
-set -U fish_pager_color_completion normal
-set -U fish_pager_color_description B3A06D yellow
-set -U fish_pager_color_prefix white --bold --underline
-set -U fish_pager_color_progress brwhite --background=cyan
+## Nord theme ## Run the following upon install
+#set -Ux fish_color_normal normal
+#set -Ux fish_color_command 81a1c1
+#set -Ux fish_color_quote a3be8c
+#set -Ux fish_color_redirection b48ead
+#set -Ux fish_color_end 88c0d0
+#set -Ux fish_color_error ebcb8b
+#set -Ux fish_color_param eceff4
+#set -Ux fish_color_comment 434c5e
+#set -Ux fish_color_match --background=brblue
+#set -Ux fish_color_selection white --bold --background=brblack
+#set -Ux fish_color_search_match bryellow --background=brblack
+#set -Ux fish_color_history_current --bold
+#set -Ux fish_color_operator 00a6b2
+#set -Ux fish_color_escape 00a6b2
+#set -Ux fish_color_cwd green
+#set -Ux fish_color_cwd_root red
+#set -Ux fish_color_valid_path --underline
+#set -Ux fish_color_autosuggestion 4c566a
+#set -Ux fish_color_user brgreen
+#set -Ux fish_color_host normal
+#set -Ux fish_color_cancel -r
+#set -Ux fish_pager_color_completion normal
+#set -Ux fish_pager_color_description B3A06D yellow
+#set -Ux fish_pager_color_prefix white --bold --underline
+#set -Ux fish_pager_color_progress brwhite --background=cyan
