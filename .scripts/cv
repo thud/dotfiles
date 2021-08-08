@@ -1,7 +1,19 @@
 #!/bin/sh
 
-file_name=$(echo $1 | sed 's/\.cpp//g')
+SOLUTION_EXTENSION=".cpp";
 
-g++ -std=c++17 -Wall $file_name.cpp -o $file_name -D jp_local -fsanitize=address -fsanitize=undefined &&
-	echo -e "built successfully...\n" &&
-	./$file_name
+cache_dir="/tmp/codeforces/cv/$1";
+mkdir -p "$cache_dir";
+
+sol_name="$1$SOLUTION_EXTENSION"
+
+diff "$sol_name" "$cache_dir/$sol_name" >/dev/null 2>&1;
+if [ "$?" = "0" ]; then
+    echo -e "compiled before...\n" 1>&2;
+    $cache_dir/$1;
+else
+    g++ -std=c++17 -Wall "$sol_name" -o "$cache_dir/$1" -D thud_local -fsanitize=address -fsanitize=undefined &&
+        echo -e "built successfully...\n" 1>&2 &&
+        cp "$sol_name" "$cache_dir/$sol_name" &&
+        $cache_dir/$1;
+fi

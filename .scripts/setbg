@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CHOSEN=$(ls "$XDG_CONFIG_HOME/wallpapers" | shuf | sed -n 1p)
+CHOSEN="$(ls "$XDG_CONFIG_HOME/wallpapers" | shuf | sed -n 1p)"
 
 cp $XDG_CONFIG_HOME/wallpapers/$CHOSEN $XDG_CONFIG_HOME/wall
 

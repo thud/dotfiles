@@ -3,7 +3,7 @@
 if [ ! "$1" ];
 then
 	echo "Missing argument [contest name] (eg. 650d2)";
-	exit;
+	exit 1;
 fi
 
 (ls template.cpp >> /dev/null 2>&1 &&
@@ -18,4 +18,5 @@ fi
 	cp -n /tmp/"$1"template.cpp e.cpp &&
 	cp -n /tmp/"$1"template.cpp f.cpp &&
 	echo "generated code successfully"; ) ||
-	echo "FAILED"
+	(echo "FAILED" &&
+	exit 1)

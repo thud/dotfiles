@@ -12,3 +12,5 @@ xinput --set-prop "Elan Touchpad" "libinput Tapping Enabled" 1;
 echo "enabled touchpad tapping...";
 bar;
 echo "started status bar...";
+setxkbmap -option caps:escape
+echo "rebound caps-lock...";
