@@ -8,7 +8,7 @@ setbg;
 echo "set wallpaper...";
 xinput --set-prop 9 "Coordinate Transformation Matrix" 0.35 0 0 0 0.35 0 0 0 1;
 echo "set mouse-sensitivity...";
-bar;
-echo "started status bar...";
 setxkbmap -option caps:escape
 echo "rebound caps-lock...";
+bar;
+echo "started status bar...";
