@@ -376,8 +376,11 @@ export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 
 export EDITOR="nvim"
 export PAGER="less"
-export BROWSER="librewolf"
-export CHROME="/usr/bin/brave"
+export BROWSER="firefox"
+# export BROWSER="chrome --enable-unveil"
+# export CHROME="/usr/bin/brave"
+
+export JAVA_HOME="/usr/local/jdk-11/"
 
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -387,3 +390,5 @@ source ~/.aliases
 set -o vi
 
 \\builtin export SHELL=$MKSH MANWIDTH=80 LESSHISTFILE=-
+
+ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/ttyC0 ]]; then exec startx; fi
