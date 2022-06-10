@@ -7,16 +7,16 @@ then
 fi
 
 (ls template.cpp >> /dev/null 2>&1 &&
-	cp template.cpp /tmp/"$1"template.cpp &&
-	sed -i s/_TASK_/"$1"/g /tmp/"$1"template.cpp &&
+	cp template.cpp "/tmp/$1template.cpp" &&
+	sed -i "s/_TASK_/$1/g" "/tmp/$1template.cpp" &&
 	mkdir -p "$1" &&
 	cd "$1" &&
-	cp -n /tmp/"$1"template.cpp a.cpp &&
-	cp -n /tmp/"$1"template.cpp b.cpp &&
-	cp -n /tmp/"$1"template.cpp c.cpp &&
-	cp -n /tmp/"$1"template.cpp d.cpp &&
-	cp -n /tmp/"$1"template.cpp e.cpp &&
-	cp -n /tmp/"$1"template.cpp f.cpp &&
+	cp -i "/tmp/$1template.cpp" a.cpp &&
+	cp -i "/tmp/$1template.cpp" b.cpp &&
+	cp -i "/tmp/$1template.cpp" c.cpp &&
+	cp -i "/tmp/$1template.cpp" d.cpp &&
+	cp -i "/tmp/$1template.cpp" e.cpp &&
+	cp -i "/tmp/$1template.cpp" f.cpp &&
 	echo "generated code successfully"; ) ||
 	(echo "FAILED" &&
 	exit 1)
