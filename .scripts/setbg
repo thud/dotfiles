@@ -1,7 +1,10 @@
 #!/bin/sh
 
-CHOSEN="$(ls "$XDG_CONFIG_HOME/wallpapers" | shuf | sed -n 1p)"
+wallpapers="$(ls "$XDG_CONFIG_HOME/wallpapers")";
+nwallpapers="$(echo "$wallpapers" | wc -l)";
 
-cp $XDG_CONFIG_HOME/wallpapers/$CHOSEN $XDG_CONFIG_HOME/wall
+chosen="$(echo "$wallpapers" | awk "NR==$((RANDOM%nwallpapers+1))")";
+
+cp "$XDG_CONFIG_HOME/wallpapers/$chosen" "$XDG_CONFIG_HOME/wall"
 
 xwallpaper --zoom "$XDG_CONFIG_HOME/wall"
