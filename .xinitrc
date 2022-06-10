@@ -36,4 +36,6 @@ xrandr -r 144 &&
 xrdb -merge ~/.Xresources &&
 xsetroot -cursor_name left_ptr &
 
-exec dwm
+xidle -delay 5 -nw -program "/usr/bin/env DISPLAY=:0 XAUTHORITY=/home/thud/.Xauthority /usr/local/bin/slock -c" -timeout 300 &
+
+exec dbus-launch --exit-with-session dwm
